@@ -2,7 +2,7 @@ var hours = process.argv[2];
 var minutes = process.argv[3];
 // Немного замечательного кода и магии
 
-if (parseInt(hours) > 23 || parseInt(hours) < 0 || parseInt(hours) > 59 || parseInt(hours) < 0) {
+if (parseInt(hours) > 23 || parseInt(hours) < 0 || parseInt(minutes) > 59 || parseInt(minutes) < 0) {
     console.log("Время указано неверно!");
 }
 else {
@@ -26,7 +26,7 @@ else {
     var romanMinutes = "";
 
     if (parseInt(hours) === 0) {
-        romanHours = "NN";
+        romanHours = "NN"; // у ноля нет обозначения, так что он будет N от своего латинского названия
     }
     else if (parseInt(hours) % 10 !== 0) {
         var temp = (Math.floor(parseInt(hours) / 10) * 10).toString();
