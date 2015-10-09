@@ -27,7 +27,7 @@ if (hours > 23 || hours < 0 || minutes > 59 || minutes < 0) {
     var romanHours = '';
     var romanMinutes = '';
 
-    if (hours % 10 !== 0) {
+    if (hours % 10 !== 0 && hours > 10) {
         var temp = Math.floor(hours / 10) * 10;
         var temp2 = hours % 10;
         romanHours = romanTime[temp] + romanTime[temp2];
@@ -35,7 +35,7 @@ if (hours > 23 || hours < 0 || minutes > 59 || minutes < 0) {
         romanHours = romanTime[hours];
     }
 
-    if (minutes % 10 !== 0) {
+    if (minutes % 10 !== 0 && minutes > 10) {
         var temp = Math.floor(minutes / 10) * 10;
         var temp2 = minutes % 10;
         romanMinutes = romanTime[temp] + romanTime[temp2];
